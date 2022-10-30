@@ -27,6 +27,13 @@ with ocamlPackages;
     #   export OCAMLFIND_CONF=\"${ocaml-solo5}/lib/findlib.conf
     # '';
 
+    # dune build -p ${args.pname} ''${enableParallelBuilding:+-j $NIX_BUILD_CORES} -x ${crossName}
+    buildPhase = ''
+      runHook preBuild
+      dune build
+      runHook postBuild
+    '';
+
     meta = {
       description = "Client library for HTTP/1.X / HTTP/2 written entirely in OCaml.";
       license = lib.licenses.bsd3;
