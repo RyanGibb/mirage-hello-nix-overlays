@@ -55,11 +55,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1667143920,
-        "narHash": "sha256-v+mBcIRWsMQjgYyq22M/sQotp6qTjaFzcOlOcJLzJ/w=",
+        "lastModified": 1667148199,
+        "narHash": "sha256-8/PsTNXOpbQQxsyb5yY6L8ofphXJABzHxYqGkZhfX+k=",
         "owner": "RyanGibb",
         "repo": "nix-overlays",
-        "rev": "4520dbfd23c824201bbf2b88952bd8cdf3e5ead9",
+        "rev": "24b08e82089daa640333179644ca9ad1b4a688be",
         "type": "github"
       },
       "original": {

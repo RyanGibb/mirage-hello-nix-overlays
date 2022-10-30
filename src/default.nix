@@ -1,4 +1,4 @@
-{ stdenv, lib, ocamlPackages, static ? false, doCheck, nix-filter }:
+{ pkgs, stdenv, lib, ocamlPackages, static ? false, doCheck, nix-filter }:
 
 with ocamlPackages;
 
@@ -9,17 +9,19 @@ with ocamlPackages;
 
     src = ./.;
 
-    nativeBuildInputs = [ ocaml dune findlib ];
+    nativeBuildInputs = [ ocaml dune findlib pkgs.solo5 ];
     propagatedBuildInputs = [
       duration 
       lwt 
       mirage 
-    #   mirage-bootvar-solo5 
-    #   mirage-clock-solo5
+      mirage-bootvar-solo5 
+      mirage-clock-solo5
       mirage-logs 
     #   mirage-runtime 
-    #   mirage-solo5
-    #   mirage-time
+      mirage-solo5
+      mirage-time
+      # TODO use nixpkgs solo5?
+      # solo5-elftool
     ];
     inherit doCheck;
 
