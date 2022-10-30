@@ -6,6 +6,8 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.ocaml-overlays.url = "github:RyanGibb/nix-overlays";
   inputs.ocaml-overlays.inputs.flake-utils.follows = "flake-utils";
+  # make ocaml-overlays follow system nixpkgs
+  # TODO use https://github.com/RyanGibb/nix-overlays#alternative-advanced
   inputs.ocaml-overlays.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = { self, ocaml-overlays, flake-utils, nix-filter, ... }:
