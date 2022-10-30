@@ -4,6 +4,7 @@
 
 (profile release)
 
+; if uncommented requires ocaml-solo5 package (found with preBuild command in default.nix)
 ; (context (default
 ;   (name solo5)
 ;   (host default)
