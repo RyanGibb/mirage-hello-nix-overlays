@@ -25,9 +25,10 @@ with ocamlPackages;
     ];
     inherit doCheck;
 
-    # preBuild = ''
     #   export OCAMLFIND_CONF=\"${ocaml-solo5}/lib/findlib.conf
-    # '';
+    preBuild = ''
+      export NIX_CFLAGS_COMPILE="-isystem ${pkgs.solo5}/include/solo5 $NIX_CFLAGS_COMPILE"
+    '';
 
     # dune build -p ${args.pname} ''${enableParallelBuilding:+-j $NIX_BUILD_CORES} -x ${crossName}
     buildPhase = ''
