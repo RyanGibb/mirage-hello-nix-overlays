@@ -51,7 +51,7 @@ let mirage_logs_make__7 = lazy (
   __pclock__6 >>= fun _pclock__6 ->
   let ring_size = None in
   let reporter = Mirage_logs_make__7.create ?ring_size () in
-  Mirage_runtime.set_level ~default:(Some Logs.Info) (Key_gen.logs ());
+  Mirage_runtime.set_level ~default:(Logs.Info) (Key_gen.logs ());
   Mirage_logs_make__7.set_reporter reporter;
   Lwt.return reporter
   )
